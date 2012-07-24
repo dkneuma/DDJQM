@@ -1,9 +1,10 @@
-var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
+var serviceURL = "http://dictiondoctor.com/DDServices/";
 
 var letters;
 
 $('#letterListPage').bind('pageinit', function(event) {
-	alert("Page init");
+//	alert("Page init");
+	$.mobile.allowCrossDomainPages = true;
 	getLetterList();
 	});
 

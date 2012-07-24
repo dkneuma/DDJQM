@@ -6,13 +6,13 @@ document.addEventListener("deviceready", onDeviceReady, false);
         console.log("Cordova Ready");
     }
 
+	var serviceURL = "http://dictiondoctor.com/DDServices/";
 
-var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
 
 $('#screen3Page').live('pageshow', function(event) {
 	$.mobile.allowCrossDomainPages = true;
 	var id = getUrlVars()["id"];
-	alert("Called with id=" + id);
+//	alert("Called with id=" + id);
 	$.getJSON(serviceURL + 'getdirection.php?id='+id, displayScreen);
 	
 });

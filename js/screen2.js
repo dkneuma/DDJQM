@@ -7,7 +7,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
     }
 
 
-var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
+	var serviceURL = "http://dictiondoctor.com/DDServices/";
+
 
 $('#screen2Page').live('pageshow', function(event) {
 	$.mobile.allowCrossDomainPages = true;
