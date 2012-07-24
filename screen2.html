@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	
+	<title>screen2demo</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=480px, initial-scale=1"> 
+		<link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<script src="js/jquery-1.7.1.min.js"></script>
+		<script src="js/jquery.mobile-1.1.0.min.js"></script>
+		<script src="js/screen2.js"></script>
+	</head> 
+
+	<body> 
+
+	<div data-role="page" id="screen2Page">
+
+		<div data-role="header" data-position="inline">
+			<a href="./index.html" data-icon="home">Home</a>
+			<h1>The Letter Sound</h1>
+		</div><!-- /header -->
+
+		<div data-role="content" id="content">	
+			<div id="pagetitle">
+			<h2>Listen and Repeat</h2>
+			</div>
+			<div id="screen2word">
+				<audio src="test.mp3" controls="controls">Test File</audio><br />
+				<a href="#" id="wordbutton"data-role="button" data-theme="b"></a>
+			</div>
+			<div id="screen2Recording">
+				<a href="#" id="recordbutton" data-role="button" data-theme="e">Record Yourself</a>
+			</div>
+			<div id="screen2IPA">
+				<a href="#" id="IPAbutton" data-role="button" data-theme="b"></a>
+			</div>
+			<div id="screen2Playback">
+				<a href="#" id="playbutton" data-role="button" data-theme="e">Play Back</a>
+			</div>
+			<div id="navbuttons" data-role="navbar">
+				<ul>
+					<li><a href="#" data-role="button" data-theme="b">Previous</a></li>
+					<li><a href="#" data-role="button" data-theme="b">Save</a></li>
+					<li><a href="#" data-role="button" data-theme="b">Next</a></li>
+			</div>
+			
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<h4>Footer content</h4>
+		</div><!-- /footer -->
+
+	</div><!-- /page -->
+
+	</body>
+	</html>
