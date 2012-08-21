@@ -1,4 +1,4 @@
-var serviceURL = "http://dictiondoctor.com/DDServices/";
+var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
 
 var letters;
 
