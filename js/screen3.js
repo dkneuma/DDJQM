@@ -7,7 +7,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
     }
 
 var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
-
 $('#screen3Page').live('pageshow', function(event) {
 	$.mobile.allowCrossDomainPages = true;
 	var id = getUrlVars()["id"];
@@ -25,7 +24,7 @@ function displayScreen(data) {
 //	$('#screendirection')[0].innerHTML=screen3data.directionString;
 	$('#screendirection').append(screen3data.directionString);
 
-	var screenref = "screen" + screen3data.nextScreenType + ".html?id=" + screen3data.nextScreenID;
+	var screenref = "screen" + screen3data.nextScreenType + ".html?id=" + screen3data.nextpage;
 
 	$('#btnNext').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
 //	$('#btnNext').attr('href', 'screen3?id='+ screen3data.nextScreenID);

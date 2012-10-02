@@ -8,7 +8,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 
 var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
-
 $('#screen2Page').live('pageshow', function(event) {
 	$.mobile.allowCrossDomainPages = true;
 	var id = getUrlVars()["id"];
@@ -27,11 +26,11 @@ function displayWord(data) {
 	$('#wordbutton').append(screen2data.Name);
 //	$('#wordbutton').refresh;
 	$('#IPAbutton').append(screen2data.IPA);
-//	var screenref = "screen" + screen3data.nextScreenType + ".html?id=" + screen3data.nextScreenID;
-
-//	$('#btnNext').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
-//	$('#btnNext').attr('href', 'screen3?id='+ screen3data.nextScreenID);
-//	$('#btnNext').listview('refresh');
+	var screenref = "screen" + screen2data.nextScreenType + ".html?id=" + screen2data.nextpage;
+	//$('#navbuttons li').remove();
+	//$('#navbuttons').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
+	$('#btnNext').attr('href', screenref);
+	$('#btnNext').listview('refresh');
 
 }
 

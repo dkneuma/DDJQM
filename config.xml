@@ -20,7 +20,7 @@
 		<gap:platform name="webos" />
 		<gap:platform name="ios" />
 	</gap:platforms>
-
+	<access origin="https://levi.cis.indwes.edu" />
 	<icon src="icon.png" gap:role="default" />
 
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>

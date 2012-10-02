@@ -1,9 +1,9 @@
-var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
 
 var letters;
-
+var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
 $('#letterListPage').bind('pageinit', function(event) {
-//	alert("Page init");
+ //alert("Page init");
+	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
 	getLetterList();
 	});
@@ -11,7 +11,7 @@ $('#letterListPage').bind('pageinit', function(event) {
 
 
 function getLetterList() {
-	$.getJSON(serviceURL + 'getletters.php', function(data) {
+	$.getJSON(serviceURL+"getletters.php", function(data) {
 		$('#letterList li').remove();
 		var letters = data.items;
 		$.each(letters, function(index, letter) {
