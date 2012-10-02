@@ -1,6 +1,6 @@
 
 var letters;
-var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
+var serviceURL = "http://www.dictiondoctor.com/DDServices/";
 $('#letterListPage').bind('pageinit', function(event) {
  //alert("Page init");
 	$.support.cors = true;
