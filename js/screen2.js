@@ -8,6 +8,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 
 var serviceURL = "http://www.dictiondoctor.com/DDServices/";
+//var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
 $('#screen2Page').live('pageshow', function(event) {
 	$.mobile.allowCrossDomainPages = true;
 	var id = getUrlVars()["id"];
@@ -23,9 +24,9 @@ function displayWord(data) {
 //	alert("Word= " + screen2data.Name);
 //	$('#screendirection').append("ChangedText");
 //	$('#screendirection')[0].innerHTML=screen3data.directionString;
-	$('#wordbutton').append(screen2data.Name);
+	$('#wordbutton').text(screen2data.Name);
 //	$('#wordbutton').refresh;
-	$('#IPAbutton').append(screen2data.IPA);
+	$('#IPAbutton').text(screen2data.IPA);
 	var screenref = "screen" + screen2data.nextScreenType + ".html?id=" + screen2data.nextpage;
 	//$('#navbuttons li').remove();
 	//$('#navbuttons').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
