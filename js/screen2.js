@@ -13,6 +13,7 @@ $('#screen2Page').live('pageshow', function(event) {
 	$.mobile.allowCrossDomainPages = true;
 	var id = getUrlVars()["id"];
 //	alert("Called with id=" + id);
+	console.log(serviceURL+'getword.php?id='+id);
 	$.getJSON(serviceURL + 'getword.php?id='+id, displayWord);
 	
 });
@@ -24,10 +25,13 @@ function displayWord(data) {
 //	alert("Word= " + screen2data.Name);
 //	$('#screendirection').append("ChangedText");
 //	$('#screendirection')[0].innerHTML=screen3data.directionString;
+	var audiosource = "/sounds/"+screen2data.wordID+".wav";
+	$('#audiocontrol').src=audiosource;
 	$('#wordbutton').text(screen2data.Name);
 //	$('#wordbutton').refresh;
 	$('#IPAbutton').text(screen2data.IPA);
 	var screenref = "screen" + screen2data.nextScreenType + ".html?id=" + screen2data.nextpage;
+	console.log(screenref);
 	//$('#navbuttons li').remove();
 	//$('#navbuttons').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
 	$('#btnNext').attr('href', screenref);

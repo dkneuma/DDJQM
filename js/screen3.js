@@ -13,6 +13,7 @@ $('#screen3Page').live('pageshow', function(event) {
 	$.mobile.allowCrossDomainPages = true;
 	var id = getUrlVars()["id"];
 //	alert("Called with id=" + id);
+	console.log(serviceURL+'getdirection.php?id='+id);
 	$.getJSON(serviceURL + 'getdirection.php?id='+id, displayScreen);
 	
 });
@@ -25,7 +26,7 @@ function displayScreen(data) {
 	$('#screenDirection').append(screen3data.directionString)
 
 	var screenref = "screen" + screen3data.nextScreenType + ".html?id=" + screen3data.nextpage;
-
+	console.log(screenref);
 //	$('#btnNext').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
 	$('#btnNext').attr('href', screenref);
 //	$('#btnNext').listview('refresh');
