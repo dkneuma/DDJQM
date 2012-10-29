@@ -7,8 +7,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
     }
 
 
-var serviceURL = "http://www.dictiondoctor.com/DDServices/";
-//var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
+//var serviceURL = "http://www.dictiondoctor.com/DDServices/";
+var serviceURL = "http://localhost/~daniel.neumann/DDServices/";
 $('#screen2Page').live('pageshow', function(event) {
 	$.mobile.allowCrossDomainPages = true;
 	var id = getUrlVars()["id"];
@@ -25,19 +25,40 @@ function displayWord(data) {
 //	alert("Word= " + screen2data.Name);
 //	$('#screendirection').append("ChangedText");
 //	$('#screendirection')[0].innerHTML=screen3data.directionString;
-	var audiosource = "/sounds/"+screen2data.wordID+".wav";
-	$('#audiocontrol').src=audiosource;
+	var audiosource = "sounds/w"+screen2data.wordID+".wav";
+	$('#audiocontrol').attr('src',audiosource);
 	$('#wordbutton').text(screen2data.Name);
+	$("#wordbutton").click(function() {
+	  playAudio(audiosource);
+	});
+	
+	
+	
 //	$('#wordbutton').refresh;
 	$('#IPAbutton').text(screen2data.IPA);
-	var screenref = "screen" + screen2data.nextScreenType + ".html?id=" + screen2data.nextpage;
+	var screenref = "screen" + screen2data.nextScreenType + ".html?id=" + screen2data.nextScreenID;
 	console.log(screenref);
 	//$('#navbuttons li').remove();
 	//$('#navbuttons').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
 	$('#btnNext').attr('href', screenref);
-	$('#btnNext').listview('refresh');
+//	$('#btnNext').text(screenref);
+//	$('#btnNext').listview('refresh');
 
 }
+var my_media = null;
+var mediaTimer = null;
+
+       // Play audio
+       //
+       function playAudio(src) {
+           if (my_media == null) {
+               // Create Media object from src
+               my_media = new Media(src, onSuccess, onError);
+           } // else play current audio
+           // Play audio
+           my_media.play();
+       }
+
 
 function getUrlVars() {
     var vars = [], hash;
