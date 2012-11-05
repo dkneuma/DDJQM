@@ -29,7 +29,7 @@ function displayScreen(data) {
 	console.log(screenref);
 //	$('#btnNext').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
 	$('#btnNext').attr('href', screenref);
-	$('#btnNext').text(screenref);
+//	$('#btnNext').text(screenref);
 //	$('#btnNext').listview('refresh');
 
 }
