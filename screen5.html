@@ -3,7 +3,7 @@
 <html>
 <head>
 	
-	<title>Play only Screen (4)</title>
+	<title>Quiz Screen</title>
 	<meta charset="utf-8">
 		<meta name="viewport" content="width=480px, initial-scale=1"> 
 		<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
@@ -13,30 +13,44 @@
 
 	<body> 
 
-	<div data-role="page" id="screen4Page" data-add-back-btn="true">
+	<div id="screen5Page" data-role="page"  data-add-back-btn="true">
 
-		<div data-role="header"  >
-			<h1 id="lettersound">The Letter Sound</h1>
-		</div><!-- /header -->
+			<div data-role="header"  >
+				<h1 id="lettersound">The Letter Sound</h1>
+			</div><!-- /header -->
 
 		<div data-role="content" id="content">	
 			<div id="pagetitle">
-			<h2>Listen</h2>
+			<h2>Quiz</h2>
 			</div>
 			<div id="screenDirection">
-					<audio id="audiocontrol" controls>
-					<source src="sounds/d24.wav">
-
-					<!-- This is Where You Enter Your Flash Fall Back -->
-					</audio><br />
-				<span id="wordbutton">WORD</span><span id="IPAbutton">IPA</span>
-				<a href="#" id="playbutton" data-role="button" data-theme="b">Play</a>
-			</div>
-			<div id="navbuttons" data-role="navbar">
-				<ul>
-					<li><a href="#" id="btnNext" data-role="button" data-theme="b">Next</a></li>
+				
+				<span id="wordbutton">WORD</span>
+				
 			</div>
 			
+			<div id="letterButtons">
+				<ul id="ipaList" data-role="listview" data-inset="true" data-theme="d">
+					<li>1</li>
+					<li>2</li>
+				</ul>
+			
+			</div>
+				<div id="ruleButtons">
+					<ul id="ruleList" data-role="listview" data-inset="true" data-theme="c">
+						<li>Rule 1</li>
+						<li>Rule 2</li>
+						<li>Rule 3</li>
+							<li>Rule 4</li>
+							<li>Rule 5</li>
+							<li>Rule 6</li>
+					</ul>
+
+				</div>
+				<div id="navbuttons" data-role="navbar">
+					<ul>
+						<li><a href="#" id="btnNext" data-role="button" data-theme="b">Next</a></li>
+				</div>
 		</div><!-- /content -->
 
 		<div data-role="footer">

@@ -14,25 +14,32 @@ $('#screen3Page').live('pageshow', function(event) {
 	var id = getUrlVars()["id"];
 //	alert("Called with id=" + id);
 	console.log(serviceURL+'getdirection.php?id='+id);
-	$.getJSON(serviceURL + 'getdirection.php?id='+id, displayScreen);
+	
+	$.getJSON(serviceURL + 'getletter.php?callback=?','id='+id, function(data){
+			var letterdata = data.item;
+			var newstring = "Unit "+letterdata.letterID+" "+letterdata.letterIPA;
+			$('#lettersound').text(newstring);
+	
+		});
+	
+	
+	$.getJSON(serviceURL + 'getdirection.php?callback=?','id='+id, function(data){
+		
+			var screen3data = data.item;
+			console.log(screen3data);
+
+			$('#screenDirection').text(screen3data.directionString);
+
+			var screenref = "screen" + screen3data.nextScreenType + ".html?id=" + screen3data.nextScreenID;
+			console.log(screenref);
+	
+			$('#btnNext').attr('href', screenref);
+		
+		
+	});
 	
 });
 
-function displayScreen(data) {
-
-	var screen3data = data.item;
-	console.log(screen3data);
-
-	$('#screenDirection').append(screen3data.directionString)
-
-	var screenref = "screen" + screen3data.nextScreenType + ".html?id=" + screen3data.nextScreenID;
-	console.log(screenref);
-//	$('#btnNext').append('<li><a href="'+screenref+'" data-role="button" data-theme="b" id="btnNext">Next</a></li>');
-	$('#btnNext').attr('href', screenref);
-//	$('#btnNext').text(screenref);
-//	$('#btnNext').listview('refresh');
-
-}
 
 function getUrlVars() {
     var vars = [], hash;

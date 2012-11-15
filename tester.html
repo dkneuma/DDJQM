@@ -14,12 +14,23 @@
             if('webkitAudioContext' in window) {
                 myAudioContext = new webkitAudioContext();
                 // an analyser is used for the spectrum
+				alert("Got webkitAudioContext");
                 myAudioAnalyser = myAudioContext.createAnalyser();
                 myAudioAnalyser.smoothingTimeConstant = 0.85;
                 myAudioAnalyser.connect(myAudioContext.destination);
  
                 fetchSounds();
-            }
+            } else if('AudioContext' in window) {
+				myAudioContext = new AudioContext();
+                // an analyser is used for the spectrum
+				alert("Got AudioContext");
+                myAudioAnalyser = myAudioContext.createAnalyser();
+                myAudioAnalyser.smoothingTimeConstant = 0.85;
+                myAudioAnalyser.connect(myAudioContext.destination);
+				}
+				else {
+					alert("No audio");
+				}
         }
  
         function fetchSounds() {

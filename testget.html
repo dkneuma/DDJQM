@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test JSONP</title>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+$.getJSON('http://dictiondoctor.com/TEST/testfile.php?callback=?','firstname=Dan',function(res){
+    alert('Your name is '+res.fullname);
+});
+
+});
+</script>
+</head>
+<body>
+
+    <canvas width="300" height="200"></canvas>
+</body>
+</html>
